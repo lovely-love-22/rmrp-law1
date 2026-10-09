@@ -1,5 +1,5 @@
 /* ============================================================
-   RMRP LAW — логика портала v3 (со переключением страниц)
+   RMRP LAW — логика портала v3
    ============================================================ */
 
 (function () {
@@ -45,7 +45,7 @@
   });
 
   /* ============================================================
-     ПЕРЕКЛЮЧЕНИЕ СТРАНИЦ (Законодательство / Военкомат)
+     ПЕРЕКЛЮЧЕНИЕ СТРАНИЦ
      ============================================================ */
   function switchPage(page) {
     var pageLaw = $('#page-law');
@@ -87,7 +87,6 @@
       });
     }
 
-    // Ссылки "Военкомат" в навигации
     $$('.vk-link').forEach(function (link) {
       link.addEventListener('click', function (e) {
         e.preventDefault();
@@ -623,7 +622,7 @@
     var chapters = JSON.parse(localStorage.getItem(LS.chapters) || '{}');
     var list = chapters[sec] || [];
     if (!list.length) {
-      chapterList.innerHTML = '<div style="color:var(--txt-3);font-size:13px;padding:14px;text-align:center;">Пока нет добавленных глав для этого раздела</div>';
+      chapterList.innerHTML = '<div style="color:#6e7385;font-size:13px;padding:14px;text-align:center;">Пока нет добавленных глав для этого раздела</div>';
       return;
     }
     chapterList.innerHTML = list.map(function (c) {
@@ -664,7 +663,7 @@
           '<span class="acc-title">' + c.title + '</span>' +
           '<span class="acc-arrow">▾</span>' +
         '</button>' +
-        '<div class="acc-body"><div class="acc-text" style="color:var(--txt-3);font-style:italic;">Пользовательская глава.</div></div>';
+        '<div class="acc-body"><div class="acc-text" style="color:#6e7385;font-style:italic;">Пользовательская глава.</div></div>';
       acc.appendChild(div);
       var hdr = $('.acc-header', div);
       if (hdr) {
